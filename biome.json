@@ -1,17 +1,11 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.8.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
-  "organizeImports": {
-    "enabled": true
-  },
   "formatter": {
-    "ignore": [
-      "worker-configuration.d.ts"
-    ],
     "enabled": true,
     "formatWithErrors": false,
     "attributePosition": "auto",
@@ -21,9 +15,6 @@
     "lineWidth": 120
   },
   "linter": {
-    "ignore": [
-      "worker-configuration.d.ts"
-    ],
     "enabled": true,
     "rules": {
       "correctness": {
@@ -41,6 +32,14 @@
         }
       },
       "recommended": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
     }
   },
   "javascript": {
