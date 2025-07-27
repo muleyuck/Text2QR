@@ -1,0 +1,1 @@
+export const CHROME_MESSAGE_TYPE = "GET_SELECTED_TEXT";
