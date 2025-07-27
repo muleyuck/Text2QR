@@ -1,1 +1,1 @@
-console.log("Text to QR Code extension loaded");
+console.log("Text to QR Code extension loaded")

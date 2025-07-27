@@ -1,9 +1,9 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
-import tailwindcss from "@tailwindcss/vite";
-import { crx } from "@crxjs/vite-plugin";
-import manifest from "./manifest.json";
+import { resolve } from "node:path"
+import { crx } from "@crxjs/vite-plugin"
+import tailwindcss from "@tailwindcss/vite"
+import react from "@vitejs/plugin-react"
+import { defineConfig } from "vite"
+import manifest from "./manifest.json"
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -16,4 +16,4 @@ export default defineConfig({
       "@": resolve(__dirname, "src"),
     },
   },
-});
+})
