@@ -28,26 +28,26 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="w-80 bg-white p-4">
-      <div className="text-center">
-        <h2 className="mb-4 font-semibold text-gray-800 text-lg">Text2QR</h2>
-        <div className="mb-4">
-          <p className="mb-2 text-gray-600 text-sm">Selection:</p>
-          <div className="max-h-20 max-w-full overflow-auto rounded bg-gray-100 p-2 text-sm">{selectedText}</div>
-        </div>
+    <div className="h-full w-80 bg-white p-4">
+      <div className="flex flex-col items-center space-y-2">
+        <h2 className="mb-4 w-36">
+          <img src="/logo.svg" alt="Text2QR Logo" className="" />
+        </h2>
         <QRCodeCanvas
           value={selectedText}
+          marginSize={4}
           size={256}
           level={"L"}
           imageSettings={{
-            src: "/vite.svg",
+            src: "/favicon.svg",
             x: undefined,
             y: undefined,
-            height: 12,
-            width: 12,
+            height: 24,
+            width: 24,
             excavate: true,
           }}
         />
+        <div className="font-semibold text-gray-600">SCAN ME!</div>
       </div>
     </div>
   )
