@@ -31,7 +31,7 @@ const App: React.FC = () => {
     <div className="h-full w-80 bg-white p-4">
       <div className="flex flex-col items-center space-y-2">
         <h2 className="mb-4 w-36">
-          <img src="/logo.svg" alt="Text2QR Logo" className="" />
+          <img src="/logo-light.svg" alt="Text2QR Logo Light" />
         </h2>
         <QRCodeCanvas
           value={selectedText}
