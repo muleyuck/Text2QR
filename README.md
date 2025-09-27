@@ -18,6 +18,11 @@ Perfect for quickly sharing text content, URLs, or any other information through
 
 ## Installation
 
+### Download from Releases
+
+1. Download release.zip from [Releases](https://github.com/muleyuck/Text2QR/releases/latest)
+
+
 ### From Source
 
 1. Clone this repository:
@@ -36,10 +41,11 @@ npm install
 npm run build
 ```
 
-4. Load the extension in Chrome:
-   - Open Chrome and navigate to `chrome://extensions/`
-   - Enable "Developer mode" in the top right
-   - Click "Load unpacked" and select the `dist` folder
+
+### Load the extension in Chrome:
+ - Open Chrome and navigate to `chrome://extensions/`
+ - Enable "Developer mode" in the top right
+ - Click "Load unpacked" and select the `dist` folder
 
 
 ## Usage
