@@ -1,7 +1,5 @@
 [![unit-test](https://github.com/muleyuck/Text2QR/actions/workflows/unit-test.yml/badge.svg)](https://github.com/muleyuck/Text2QR/actions/workflows/unit-test.yml)
 
-# Text2QR
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/public/logo-dark.svg">
   <img width="512" src="/public/logo-light.svg">
@@ -15,6 +13,7 @@ Perfect for quickly sharing text content, URLs, or any other information through
 ## Features
 
 - **Right-click Context Menu**: Generate QR codes directly from selected text
+- **Extension Icon Click**: Click the extension icon to generate a QR code from currently selected text
 
 ## Installation
 
@@ -50,10 +49,16 @@ npm run build
 
 ## Usage
 
+### Via Context Menu
 1. **Select text** on any webpage
 2. **Right-click** on the selected text
 3. **Choose "Generate QR Code"** from the context menu
 4. **Scan the QR code** with any QR code reader
+
+### Via Extension Icon
+1. **Select text** on any webpage
+2. **Click the Text2QR icon** in the Chrome toolbar
+3. **Scan the QR code** with any QR code reader
 
 The QR code will contain the exact text you selected and can be scanned by any device with a QR code reader.
 
