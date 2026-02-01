@@ -15,7 +15,12 @@ chrome.runtime.onInstalled.addListener(() => {
 chrome.contextMenus.onClicked.addListener((info, tab) => {
   if (info.menuItemId === contextMenuId && info.selectionText && tab?.id) {
     selectedText = info.selectionText
-    chrome.action.openPopup()
+    chrome.windows.create({
+      url: chrome.runtime.getURL("index.html"),
+      type: "popup",
+      width: 320,
+      height: 440,
+    })
   }
 })
 
