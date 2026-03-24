@@ -8,32 +8,33 @@ const App: React.FC = () => {
   const [error, setError] = useState<string>("")
 
   useEffect(() => {
-    chrome.runtime.sendMessage({ type: CHROME_MESSAGE_TYPE }, (response) => {
+    ;(async () => {
       // 1. Opened via context menu
+      const response = await browser.runtime.sendMessage({ type: CHROME_MESSAGE_TYPE })
       if (response?.text) {
         setSelectedText(response.text)
         return
       }
 
       // 2. Opened via extension icon
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        const activeTab = tabs[0]
-        if (!activeTab?.id) {
-          setError("No active tab found")
-          return
-        }
+      const tabs = await browser.tabs.query({ active: true, currentWindow: true })
+      const activeTab = tabs[0]
+      if (!activeTab?.id) {
+        setError("No active tab found")
+        return
+      }
 
-        chrome.tabs.sendMessage(activeTab.id, { type: CHROME_MESSAGE_TYPE }, (contentResponse) => {
-          if (chrome.runtime.lastError) {
-            setError("Cannot access this page")
-          } else if (contentResponse?.text) {
-            setSelectedText(contentResponse.text)
-          } else {
-            setError("No text selected")
-          }
-        })
-      })
-    })
+      try {
+        const contentResponse = await browser.tabs.sendMessage(activeTab.id, { type: CHROME_MESSAGE_TYPE })
+        if (contentResponse?.text) {
+          setSelectedText(contentResponse.text)
+        } else {
+          setError("No text selected")
+        }
+      } catch {
+        setError("Cannot access this page")
+      }
+    })()
   }, [])
 
   return (
