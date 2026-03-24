@@ -1,7 +1,7 @@
 import { QRCodeCanvas } from "qrcode.react"
 import type React from "react"
 import { useEffect, useState } from "react"
-import { CHROME_MESSAGE_TYPE } from "@/constant"
+import { CHROME_MESSAGE_TYPE } from "@/constant.ts"
 
 const App: React.FC = () => {
   const [selectedText, setSelectedText] = useState<string>("")

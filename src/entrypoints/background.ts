@@ -17,7 +17,7 @@ export default defineBackground(() => {
     if (info.menuItemId === CONTEXT_MENU_ID && info.selectionText && tab?.id) {
       selectedText = info.selectionText
       browser.windows.create({
-        url: browser.runtime.getURL("popup.html"),
+        url: browser.runtime.getURL("/popup.html"),
         type: "popup",
         width: 320,
         height: 440,
