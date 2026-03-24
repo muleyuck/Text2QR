@@ -4,17 +4,15 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "dev": "wxt",
+    "build": "wxt build",
     "lint": "biome check .",
     "format": "biome check --write *",
-    "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky && wxt prepare"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "biome check .",
-      "tsc --noEmit"
+      "biome check ."
     ]
   },
   "dependencies": {
@@ -25,17 +23,15 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.2",
-    "@crxjs/vite-plugin": "^2.2.1",
     "@tailwindcss/vite": "^4.1.16",
     "@types/chrome": "^0.1.27",
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@vitejs/plugin-react": "^5.1.0",
-    "globals": "^16.5.0",
     "husky": "^9.1.7",
     "typescript": "~5.9.3",
-    "typescript-eslint": "^8.46.2",
-    "vite": "^7.1.12"
+    "vite": "^7.1.12",
+    "wxt": "^0.20.20"
   }
 }
