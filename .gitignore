@@ -28,3 +28,6 @@ dist-ssr
 
 # WXT generated files
 .wxt/
+
+# pnpm local store
+.pnpm-store/
