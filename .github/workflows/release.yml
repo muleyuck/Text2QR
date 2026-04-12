@@ -24,19 +24,24 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
+          cache: pnpm
+      - name: install
+        run: pnpm install --frozen-lockfile
       - name: Update version from tag
         run: |
           VERSION="${GITHUB_REF_NAME#v}"
           jq --arg v "$VERSION" '.version = $v' package.json > package.json.tmp && mv package.json.tmp package.json
           jq --arg v "$VERSION" '.version = $v' manifest.json > manifest.json.tmp && mv manifest.json.tmp manifest.json
-      - name: install
-        run: rm -rf node_modules package-lock.json && npm i
       - name: build
-        run: npm run build
+        run: pnpm build
       - name: Archive Release
         uses: thedoctor0/zip-release@b57d897cb5d60cb78b51a507f63fa184cfe35554
         with:
